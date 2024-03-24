@@ -9,7 +9,7 @@
     <ul>
       <li>
         <template v-for="temp in temps" :key="temp">
-          <label>
+          <label> Temperature
             <input
               type="radio"
               name="temperature"
@@ -23,7 +23,7 @@
       </li>
       <li>
         <template v-for="creamer in creamers" :key="creamer">
-          <label>
+          <label> Creamer
             <input
               type="radio"
               name="Creamer"
@@ -37,7 +37,7 @@
       </li>
       <li>
         <template v-for="syrup in syrups" :key="syrup">
-          <label>
+          <label> Syrup
             <input
               type="radio"
               name="Syrup"
@@ -51,7 +51,7 @@
       </li>
       <li>
         <template v-for="baseBeverage in baseBeverages" :key="baseBeverage">
-          <label>
+          <label> Base Beverage
             <input
               type="radio"
               name="Base Beverage"
@@ -63,6 +63,22 @@
           </label>
         </template>
       </li>
+      <li>
+        <input type="text"/>
+      </li>
+      <li>
+    
+        <button
+          type="button"
+          name="Make Beverage"
+          >
+          Make
+        </button>
+          
+          
+          
+      </li>
+
     </ul>
   </div>
 </template>
