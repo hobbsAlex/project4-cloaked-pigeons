@@ -7,9 +7,9 @@
       :beverage="currentBeverage"
     />
     <ul>
-      <li>
+      <li> Temperature:
         <template v-for="temp in temps" :key="temp">
-          <label> Temperature
+          <label> 
             <input
               type="radio"
               name="temperature"
@@ -21,9 +21,9 @@
           </label>
         </template>
       </li>
-      <li>
+      <li> Creamer:
         <template v-for="creamer in creamers" :key="creamer">
-          <label> Creamer
+          <label> 
             <input
               type="radio"
               name="Creamer"
@@ -35,9 +35,9 @@
           </label>
         </template>
       </li>
-      <li>
+      <li> Syrup:
         <template v-for="syrup in syrups" :key="syrup">
-          <label> Syrup
+          <label> 
             <input
               type="radio"
               name="Syrup"
@@ -49,9 +49,9 @@
           </label>
         </template>
       </li>
-      <li>
+      <li> Base Beverage:
         <template v-for="baseBeverage in baseBeverages" :key="baseBeverage">
-          <label> Base Beverage
+          <label> 
             <input
               type="radio"
               name="Base Beverage"
