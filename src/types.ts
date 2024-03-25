@@ -1,4 +1,4 @@
-type Beverage = {
+type BevType = {
     name: string;
     temperature: string;
     creamer: string;
@@ -6,5 +6,5 @@ type Beverage = {
     syrup: string;
   };
   
-  export type { Beverage };
+  export type { BevType };
   

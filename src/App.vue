@@ -86,7 +86,16 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import Beverage from "./components/Beverage.vue";
+// define pinia
 import { useBevStore } from "./stores/BeverageStore";
+import { BevTypee } from "./types";
+const addToList = (bev: BevType) => {
+  cartStore.$patch((state) => {
+    for (let i = 0; i < count; i++) {
+      state.products.push(product);
+    }
+  });
+};
 // Define reactive data
 const temps = ref(["Hot", "Cold"]);
 const currentTemp = ref("Hot");

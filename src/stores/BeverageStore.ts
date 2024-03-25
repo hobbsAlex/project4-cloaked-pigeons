@@ -1,9 +1,9 @@
 import { defineStore } from "pinia";
 
-import { Beverage } from "../types";
+import { BevType } from "../types";
 
 export const useBevStore = defineStore("BeverageStore", {
   state: () => {
-    return { beverages: [] as Beverage[] };
+    return { storedbeverages: [] as BevType[] };
   },
 });
