@@ -79,6 +79,7 @@
          
       </li>
       <template v-for="storedBev in bevStore.storedbeverages" :key="`storedBev-${idx}`">
+        <li>
           <label> 
             <input
               type="radio"
@@ -87,8 +88,9 @@
               :value="storedBev"
               
             />
-            {{ storedBev }}
+            {{ storedBev.name }}
           </label>
+        </li>
         </template>
     </ul>
   </div>
