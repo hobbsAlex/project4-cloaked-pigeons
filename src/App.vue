@@ -88,12 +88,13 @@ import { ref } from "vue";
 import Beverage from "./components/Beverage.vue";
 // define pinia
 import { useBevStore } from "./stores/BeverageStore";
-import { BevTypee } from "./types";
+import { BevType } from "./types";
+const bevStore = useBevStore;
 const addToList = (bev: BevType) => {
-  cartStore.$patch((state) => {
-    for (let i = 0; i < count; i++) {
-      state.products.push(product);
-    }
+  bevStore.$patch((state) => {
+    
+    state.beverages.push(bev);
+    
   });
 };
 // Define reactive data
