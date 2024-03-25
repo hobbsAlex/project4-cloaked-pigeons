@@ -64,21 +64,32 @@
         </template>
       </li>
       <li>
-        <input type="text"/>
+        <input id="bevname" type="text" v-model="bevname"/>
       </li>
       <li>
     
         <button
           type="button"
           name="Make Beverage"
+          @click="addToList(getBeverage())"
           >
+          
           Make
         </button>
-          
-          
-          
+         
       </li>
-
+      <template v-for="storedBev in bevStore.storedbeverages" :key="`storedBev-${idx}`">
+          <label> 
+            <input
+              type="radio"
+              name=storedBev.name
+              :id="`rbase${storedBev}`"
+              :value="storedBev"
+              
+            />
+            {{ storedBev }}
+          </label>
+        </template>
     </ul>
   </div>
 </template>
@@ -89,14 +100,28 @@ import Beverage from "./components/Beverage.vue";
 // define pinia
 import { useBevStore } from "./stores/BeverageStore";
 import { BevType } from "./types";
-const bevStore = useBevStore;
+const bevStore = useBevStore();
+const getBeverage = () => {
+  return {
+    name: bevname.value,
+    temperature: currentTemp.value,
+    creamer: currentCreamer.value,
+    syrup: currentSyrup.value,
+    base: currentBeverage.value,
+  };
+};
 const addToList = (bev: BevType) => {
   bevStore.$patch((state) => {
     
-    state.beverages.push(bev);
+    state.storedbeverages.push(bev);
     
   });
 };
+
+//const { item } = defineProps<{ item: BevType }>();
+defineEmits(["addToCart"]);
+const bevname = ref("");
+
 // Define reactive data
 const temps = ref(["Hot", "Cold"]);
 const currentTemp = ref("Hot");
