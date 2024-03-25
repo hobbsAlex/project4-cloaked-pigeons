@@ -58,6 +58,7 @@
               :id="`rbase${baseBeverage}`"
               :value="baseBeverage"
               v-model="currentBeverage"
+              
             />
             {{ baseBeverage }}
           </label>
@@ -86,7 +87,7 @@
               name=storedBev.name
               :id="`rbase${storedBev}`"
               :value="storedBev"
-              
+              @click="loadFromList(storedBev)"
             />
             {{ storedBev.name }}
           </label>
@@ -119,7 +120,15 @@ const addToList = (bev: BevType) => {
     
   });
 };
-
+const loadFromList = (bev: BevType) => {
+  
+    bevname.value=bev.name;
+    currentTemp.value = bev.temperature;
+    currentCreamer.value = bev.creamer;
+    currentSyrup.value = bev.syrup;
+    currentBeverage.value = bev.base;
+  
+};
 //const { item } = defineProps<{ item: BevType }>();
 defineEmits(["addToCart"]);
 const bevname = ref("");
